@@ -1,0 +1,38 @@
+# Build artifacts
+build/
+build-*/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Generated market data (large)
+data/synthetic_large.csv
+data/*.bin
+
+# perf / profiling output
+perf.data
+perf.data.old
+cachegrind.out.*
+callgrind.out.*
+*.svg                  # flame graphs
+
+# Editor / OS noise
+.vscode/
+.idea/
+.cache/
+.DS_Store
+*.swp
+*~
+
+# CMake-generated files outside the build/ dir
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Sanitizer logs
+asan.log.*
+ubsan.log.*
+tsan.log.*
