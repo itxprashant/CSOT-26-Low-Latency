@@ -100,7 +100,7 @@ Run `nm -D --defined-only your_strategy.so | grep create` — you should see a p
 
 Exit code **132** means the sandboxed runner hit **signal 4 (`SIGILL`)** — an **illegal instruction**. Your `.so` compiled fine on *your* machine but contains CPU instructions the judge box doesn't have.
 
-The usual cause: **`-march=native`**. The shipped `CMakeLists.txt` enables it for Release builds so local benchmarks can use AVX2/AVX-512 on your laptop. The judge runs on a fixed EC2 instance (`c5.2xlarge`, Amazon Linux 2023) — not your CPU.
+The usual cause: **`-march=native`**. The shipped `CMakeLists.txt` enables it for Release builds so local benchmarks can use AVX2/AVX-512 on your laptop. The judge runs on a fixed EC2 instance (`c7i.xlarge`, 4 vCPU / 8 GiB, Amazon Linux 2023) — not your CPU.
 
 ### `runner exit 132` on every upload (including the shipped sample)
 

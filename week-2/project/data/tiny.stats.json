@@ -1,0 +1,9 @@
+{
+  "reads": 12,
+  "writes": 2,
+  "l1_hits": 3,
+  "l1_misses": 11,
+  "l2_hits": 1,
+  "l2_misses": 10,
+  "dirty_writebacks": 0
+}

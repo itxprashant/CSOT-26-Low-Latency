@@ -53,17 +53,20 @@ Foundations: what is latency, what is throughput, how is memory laid out, and ho
 
 ---
 
-### **Week 2 — Zero-Allocation & Compile-Time Logic**
-The fastest allocation is the one you never make. The fastest branch is the one the compiler eliminates.
+### **Week 2 — Caches, Locality & Zero-Allocation**
+The fastest allocation is the one you never make. The fastest cache miss is the one your data layout never causes.
 
-- Hot path vs. cold path
-- Cache internals: cache lines, hit/miss, replacement policies (LRU, pseudo-LRU)
-- Spatial & temporal locality (benchmark experiments)
-- Zero dynamic allocation patterns (object pools, slab allocators)
-- `constexpr` / `consteval` — compute at compile time
-- Static polymorphism with templates / CRTP (no vtables!)
+📂 [`week-2/`](./week-2/) — **available now**
 
-**Project:** A COL216-style assignment (cache simulator). Finalize the platform's strategy-execution loop with zero allocations on the hot path.
+- Hot path vs. cold path (`on_init` vs. the timed `run()`)
+- Cache internals: lines, index/offset/tag, sets, ways, LRU, write-back, write-allocate, inclusion
+- Spatial & temporal locality, AoS vs. SoA (the 10× layout experiment)
+- Zero dynamic allocation patterns (object pools, arenas, fixed buffers)
+- `constexpr` / `consteval` — fold cache geometry at compile time
+- Static polymorphism with templates / CRTP (no vtables on the hot path!)
+- ⭐ Bonus: branchless / SIMD tag scan, prefetch, packed LRU
+
+**Project:** A new **ranked challenge** — a COL216-style two-level **cache simulator**. You implement a single `cache_sim.cpp` against a frozen [`CACHE_SPEC.md`](./week-2/project/CACHE_SPEC.md); the judge builds it itself (fixed flags) and ranks correct simulators by **wall-clock speed** over a huge hidden memory trace. New this week: you submit **source**, not a compiled `.so`.
 
 ---
 

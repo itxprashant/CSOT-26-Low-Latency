@@ -441,7 +441,7 @@ The public dataset is *intentionally* reproducible — debug your `incorrect` ru
 
 These are what your code is being measured against. Captured by running [`STRATEGY_SPEC.md`](./STRATEGY_SPEC.md)'s reference implementation through the same sandbox the judge uses for your submission:
 
-| | EC2 judge (`c5.2xlarge`, Amazon Linux 2023) |
+| | EC2 judge (`c7i.xlarge`, 4 vCPU / 8 GiB, Amazon Linux 2023) |
 |---|---:|
 | **p50** `on_tick` | 152 ns |
 | **p99** `on_tick` | 176 ns |

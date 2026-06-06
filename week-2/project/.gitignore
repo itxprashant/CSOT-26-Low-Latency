@@ -1,0 +1,46 @@
+# Build artifacts
+build/
+build-*/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Generated memory traces (large) — tiny.trace is the committed golden file
+data/*.trace
+!data/tiny.trace
+data/large.trace
+data/public.trace
+data/hidden.trace
+data/*.bin
+
+# Generated reference stats (large) — tiny.stats.json is committed
+data/*.stats.json
+!data/tiny.stats.json
+
+# perf / profiling output
+perf.data
+perf.data.old
+cachegrind.out.*
+callgrind.out.*
+*.svg                  # flame graphs
+
+# Editor / OS noise
+.vscode/
+.idea/
+.cache/
+.DS_Store
+*.swp
+*~
+
+# CMake-generated files outside the build/ dir
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Sanitizer logs
+asan.log.*
+ubsan.log.*
+tsan.log.*
