@@ -73,14 +73,16 @@ The fastest allocation is the one you never make. The fastest cache miss is the 
 ### **Week 3 — Parallelization & Thread Friction**
 Going wide. But threads aren't free — they fight over caches, get pre-empted by the kernel, and corrupt each other's data.
 
-- Horizontal scaling & embarrassingly parallel workloads
-- `std::thread` basics
-- Data races (deliberately introduced — watch them break things)
+📂 [`week-3/`](./week-3/) — **available now**
+
+- Horizontal scaling & embarrassingly parallel workloads, the map-reduce shape, Amdahl's law
+- `std::thread` / `std::jthread` basics and partitioning work
+- Data races (deliberately introduced — watch them break things), caught with ThreadSanitizer
 - False sharing & `alignas(64)`
 - OS context switches and scheduler jitter
 - Pinning threads to cores with `sched_setaffinity`
 
-**Project:** Embarrassingly-parallel exercises, an intentional false-sharing benchmark, and the start of parallelizing the quant platform.
+**Project:** A new **ranked challenge** — a **parallel tick aggregator**. You implement a single `aggregator.cpp` against a frozen [`AGG_SPEC.md`](./week-3/project/AGG_SPEC.md) that reduces a huge tick stream into a fixed per-symbol table of integer aggregates; the judge builds it itself (fixed flags, `-pthread`), runs it several times, and ranks **correct and deterministic** aggregators by **wall-clock speed** over a huge hidden stream. The integer aggregates are partition-independent, so the answer is the same at 1 or 8 threads — which is exactly what makes the leaderboard fair and a data race detectable.
 
 ---
 

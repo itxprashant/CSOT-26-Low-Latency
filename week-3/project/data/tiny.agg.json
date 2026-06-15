@@ -1,0 +1,39 @@
+{
+  "num_symbols": 1024,
+  "n": 10,
+  "checksum": 11370234570941876475,
+  "nonempty": [
+    {
+      "symbol": 0,
+      "count": 3,
+      "sum_price": 3000000,
+      "min_price": 999500,
+      "max_price": 1000500,
+      "sum_qty": 35
+    },
+    {
+      "symbol": 1,
+      "count": 2,
+      "sum_price": 1000000,
+      "min_price": 500000,
+      "max_price": 500000,
+      "sum_qty": 101
+    },
+    {
+      "symbol": 2,
+      "count": 1,
+      "sum_price": 2500000,
+      "min_price": 2500000,
+      "max_price": 2500000,
+      "sum_qty": 7
+    },
+    {
+      "symbol": 3,
+      "count": 4,
+      "sum_price": 800,
+      "min_price": 100,
+      "max_price": 300,
+      "sum_qty": 10
+    }
+  ]
+}
