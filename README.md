@@ -89,13 +89,16 @@ Going wide. But threads aren't free — they fight over caches, get pre-empted b
 ### **Week 4 — Lock-Free Concurrency**
 Mutexes put threads to sleep. In low-latency land, sleep is death.
 
-- Mutex overhead and futex wake-ups
-- `std::atomic`, memory orderings (`relaxed`, `acquire`, `release`, `seq_cst`)
-- Compare-and-swap (CAS) loops
-- Single-Producer / Single-Consumer (SPSC) ring buffers
-- ABA problem (intro)
+📂 [`week-4/`](./week-4/) — **available now**
 
-**Project:** Replace mutex-based queues in the quant platform with a lock-free SPSC ring buffer between the market-data thread and the strategy thread.
+- Pipeline vs. partition; the overlap ceiling `(D+S)/max(D,S)`; why a mutex handoff loses
+- `std::atomic`, read-modify-write, why `volatile` is not atomic, the release/acquire handshake
+- Memory orderings (`relaxed`, `acquire`, `release`, `seq_cst`) and exactly which ones SPSC needs
+- Building a lock-free **Single-Producer / Single-Consumer (SPSC) ring buffer**: power-of-two masking, `head`/`tail` on separate cache lines, cached indices, batching
+- Pinning both threads, spin-based back-pressure, balancing the stages
+- ⭐ Bonus: batching, the LMAX Disruptor, MPSC/MPMC, the bridge to network ingest
+
+**Project:** A new **ranked challenge** — a **lock-free pipeline**. You implement a single `pipeline.cpp` against a frozen [`PIPELINE_SPEC.md`](./week-4/project/PIPELINE_SPEC.md): a producer thread decodes a binary tick feed into `csot::Tick`s and hands them across **your lock-free SPSC ring buffer** to a consumer thread running the **unchanged Week-1 z-score strategy**, emitting an order stream. The judge builds it itself (fixed flags, `-pthread`), runs it several times, and ranks **correct and deterministic** pipelines by **wall-clock throughput** over a huge hidden feed. The strategy is a pure function of the in-order tick sequence, so the answer is identical no matter how the two threads interleave — which is exactly what makes the leaderboard fair and a handoff race detectable.
 
 ---
 

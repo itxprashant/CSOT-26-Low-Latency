@@ -91,42 +91,65 @@ def curated_tiny() -> list[tuple[int, int, int, int]]:
 
 
 def generate(accesses: int, seed: int) -> list[tuple[int, int, int, int]]:
-    """Skewed, reproducible synthetic stream.
-
-    A handful of symbols are hot (most of the volume), a middle band is warm,
-    and a chunk of the id space never appears at all (exercising the
-    empty-symbol rule). Each symbol random-walks around its own base price.
-    Reproducible for a given (accesses, seed).
-    """
+    """Skewed, reproducible synthetic stream (in-memory; use for tiny / small tests)."""
     rng = random.Random(seed)
-
-    # Partition the id space: hot, warm, and never-seen.
-    hot = list(range(0, 16))                 # ~16 symbols carry most ticks
-    warm = list(range(16, 384))              # a long warm tail
-    # ids 384..1023 are intentionally never emitted (empty rows).
-
-    # Per-symbol base price (in fixed-point) and current price for the walk.
-    base = {s: rng.randint(50_000, 5_000_000) for s in (hot + warm)}
-    cur = dict(base)
+    hot = list(range(0, 16))
+    warm = list(range(16, 384))
+    cur = [rng.randint(50_000, 5_000_000) for _ in range(384)]
 
     out: list[tuple[int, int, int, int]] = []
-    ts = 1_000_000_000  # arbitrary epoch start, ns
+    ts = 1_000_000_000
     for _ in range(accesses):
-        # 80% of ticks hit a hot symbol, 20% the warm tail.
         if rng.random() < 0.80:
             s = rng.choice(hot)
         else:
             s = rng.choice(warm)
-
-        # Random walk the price a few ticks, clamped positive.
         step = rng.randint(-500, 500)
         cur[s] = max(1, cur[s] + step)
         px = cur[s]
         qty = rng.randint(1, 1000)
-        ts += rng.randint(1, 50)  # non-decreasing timestamps
+        ts += rng.randint(1, 50)
         out.append((ts, px, s, qty))
-
     return out
+
+
+# Records buffered before each write() — keeps RAM flat on 200M-tick streams.
+_STREAM_CHUNK = 8192
+
+
+def write_generated_stream(out_path: Path, accesses: int, seed: int) -> int:
+    """Stream skewed ticks straight to disk without materialising the full stream."""
+    rng = random.Random(seed)
+    hot = list(range(0, 16))
+    warm = list(range(16, 384))
+    cur = [rng.randint(50_000, 5_000_000) for _ in range(384)]
+
+    ts = 1_000_000_000
+    buf = bytearray(_STREAM_CHUNK * REC.size)
+    off = 0
+
+    with out_path.open("wb") as f:
+        for _ in range(accesses):
+            if rng.random() < 0.80:
+                s = rng.choice(hot)
+            else:
+                s = rng.choice(warm)
+            step = rng.randint(-500, 500)
+            cur[s] = max(1, cur[s] + step)
+            px = cur[s]
+            qty = rng.randint(1, 1000)
+            ts += rng.randint(1, 50)
+
+            REC.pack_into(buf, off, ts & MASK64, px, s & 0xFFFFFFFF, qty & 0xFFFFFFFF, 0)
+            off += REC.size
+            if off >= len(buf):
+                f.write(buf)
+                off = 0
+
+        if off:
+            f.write(buf[:off])
+
+    return accesses
 
 
 def write_stream(out_path: Path, ticks: list[tuple[int, int, int, int]]) -> None:
@@ -249,12 +272,12 @@ def main() -> None:
         return
 
     if args.tiny:
-        ticks = curated_tiny()
+        write_stream(args.out, curated_tiny())
+        n = 10
     else:
-        ticks = generate(args.accesses, args.seed)
+        n = write_generated_stream(args.out, args.accesses, args.seed)
 
-    write_stream(args.out, ticks)
-    print(f"wrote {len(ticks)} ticks to {args.out}"
+    print(f"wrote {n} ticks to {args.out}"
           + ("" if args.tiny else f" (seed={args.seed})"))
 
 
