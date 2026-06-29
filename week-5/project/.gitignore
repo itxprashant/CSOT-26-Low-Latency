@@ -1,0 +1,54 @@
+# Build artifacts
+build/
+build-*/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Generated feeds (large) — tiny.feed is the committed golden file
+data/*.feed
+!data/tiny.feed
+data/large.feed
+data/public.feed
+data/hidden.feed
+data/*.bin
+
+# Generated reference order streams (large) — tiny.orders.json is committed
+data/*.orders.json
+!data/tiny.orders.json
+
+# Latency / scaling sweep CSVs from tools/plot_latency.py
+data/latency*.csv
+latency*.png
+
+# perf / profiling output
+perf.data
+perf.data.old
+cachegrind.out.*
+callgrind.out.*
+*.svg                  # flame graphs
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Editor / OS noise
+.vscode/
+.idea/
+.cache/
+.DS_Store
+*.swp
+*~
+
+# CMake-generated files outside the build/ dir
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Sanitizer logs
+asan.log.*
+ubsan.log.*
+tsan.log.*

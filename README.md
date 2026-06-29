@@ -102,17 +102,19 @@ Mutexes put threads to sleep. In low-latency land, sleep is death.
 
 ---
 
-### **Week 5 — The Network Gateway**
-The market data comes in over the wire. The order goes out over the wire. The wire is now the bottleneck.
+### **Week 5 — The Network Gateway (capstone)**
+The market data comes in over the wire. The wire is now the bottleneck — and a `recv()` is a syscall, ~100× a memory load.
 
-- Berkeley sockets recap (`socket`, `bind`, `connect`, `send`/`recv`)
-- Blocking vs. non-blocking I/O
-- Raw socket polling
-- Event loops with `epoll`
-- TCP vs. UDP — when to use which
-- (Bonus) Kernel-bypass teaser: `AF_XDP`, DPDK, Solarflare
+📂 [`week-5/`](./week-5/) — **available now**
 
-**Project:** Connect a real-world stock-data feed to the platform over TCP/UDP. Profile end-to-end latency from wire-arrival to order-decision using network profilers (`tcpdump`, `bpftrace`).
+- Berkeley sockets recap; the kernel boundary as the new hot path (`recv`/`send` are syscalls)
+- Blocking vs. non-blocking I/O, `EAGAIN`, and the readiness model
+- Event loops with `epoll` (level- vs. edge-triggered, the drain-until-`EAGAIN` rule)
+- TCP vs. UDP, datagram framing, and the **ACK-window** that keeps a loopback feed lossless & deterministic
+- The end-to-end pipeline: wire → `epoll` ingest → SPSC ring → pinned strategy → orders; no syscalls on the strategy core
+- ⭐ Bonus: kernel-bypass teaser — `recvmmsg`, `SO_BUSY_POLL`, `io_uring`, `AF_XDP`, DPDK, Solarflare/onload
+
+**Project:** The capstone **ranked challenge** — a **network gateway**. You implement a single `gateway.cpp` against a frozen [`GATEWAY_SPEC.md`](./week-5/project/GATEWAY_SPEC.md): an `epoll` ingest loop receives a UDP tick feed off a connected loopback socket, decodes each `WireTick`, hands it across **your Week-4 SPSC ring** to a **pinned** thread running the **unchanged Week-1 z-score strategy**, and acknowledges datagrams (an ACK-window) so the feed stays lossless — emitting the exact reference order stream. The judge builds it itself (fixed flags, `-pthread`), runs its own UDP feed sender against it several times, and ranks **correct and deterministic** gateways by **wall-clock throughput** over a huge hidden feed. Because the ACK-window makes the loopback feed lossless and in-order, the order stream is identical to Week 4's — one `gateway.cpp` that unifies every prior week into the complete platform.
 
 ---
 

@@ -1,0 +1,624 @@
+{
+  "num_symbols": 1024,
+  "n": 2400,
+  "num_orders": 77,
+  "checksum": 1104640351357348461,
+  "orders": [
+    {
+      "tick_index": 262,
+      "timestamp_ns": 1000007022,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1101554,
+      "qty": 1
+    },
+    {
+      "tick_index": 263,
+      "timestamp_ns": 1000007067,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1149675,
+      "qty": 1
+    },
+    {
+      "tick_index": 291,
+      "timestamp_ns": 1000007664,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1149284,
+      "qty": 1
+    },
+    {
+      "tick_index": 361,
+      "timestamp_ns": 1000009380,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1047399,
+      "qty": 1
+    },
+    {
+      "tick_index": 384,
+      "timestamp_ns": 1000010013,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1000011,
+      "qty": 1
+    },
+    {
+      "tick_index": 391,
+      "timestamp_ns": 1000010214,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1147768,
+      "qty": 1
+    },
+    {
+      "tick_index": 405,
+      "timestamp_ns": 1000010589,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1048059,
+      "qty": 1
+    },
+    {
+      "tick_index": 441,
+      "timestamp_ns": 1000011406,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1049090,
+      "qty": 1
+    },
+    {
+      "tick_index": 443,
+      "timestamp_ns": 1000011475,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1148696,
+      "qty": 1
+    },
+    {
+      "tick_index": 488,
+      "timestamp_ns": 1000012792,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 999491,
+      "qty": 1
+    },
+    {
+      "tick_index": 529,
+      "timestamp_ns": 1000013882,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1048746,
+      "qty": 1
+    },
+    {
+      "tick_index": 539,
+      "timestamp_ns": 1000014123,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1147386,
+      "qty": 1
+    },
+    {
+      "tick_index": 549,
+      "timestamp_ns": 1000014365,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1049787,
+      "qty": 1
+    },
+    {
+      "tick_index": 564,
+      "timestamp_ns": 1000014720,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1000544,
+      "qty": 1
+    },
+    {
+      "tick_index": 586,
+      "timestamp_ns": 1000015324,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1104377,
+      "qty": 1
+    },
+    {
+      "tick_index": 628,
+      "timestamp_ns": 1000016375,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1000111,
+      "qty": 1
+    },
+    {
+      "tick_index": 672,
+      "timestamp_ns": 1000017696,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1001512,
+      "qty": 1
+    },
+    {
+      "tick_index": 677,
+      "timestamp_ns": 1000017838,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1050282,
+      "qty": 1
+    },
+    {
+      "tick_index": 679,
+      "timestamp_ns": 1000017868,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1146746,
+      "qty": 1
+    },
+    {
+      "tick_index": 712,
+      "timestamp_ns": 1000018755,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1000288,
+      "qty": 1
+    },
+    {
+      "tick_index": 726,
+      "timestamp_ns": 1000019042,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1105452,
+      "qty": 1
+    },
+    {
+      "tick_index": 780,
+      "timestamp_ns": 1000020250,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 998929,
+      "qty": 1
+    },
+    {
+      "tick_index": 872,
+      "timestamp_ns": 1000022641,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 999565,
+      "qty": 1
+    },
+    {
+      "tick_index": 902,
+      "timestamp_ns": 1000023464,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1106021,
+      "qty": 1
+    },
+    {
+      "tick_index": 919,
+      "timestamp_ns": 1000023821,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1145688,
+      "qty": 1
+    },
+    {
+      "tick_index": 935,
+      "timestamp_ns": 1000024191,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1146246,
+      "qty": 1
+    },
+    {
+      "tick_index": 970,
+      "timestamp_ns": 1000025220,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1104923,
+      "qty": 1
+    },
+    {
+      "tick_index": 1004,
+      "timestamp_ns": 1000026093,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1001485,
+      "qty": 1
+    },
+    {
+      "tick_index": 1011,
+      "timestamp_ns": 1000026281,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1145214,
+      "qty": 1
+    },
+    {
+      "tick_index": 1112,
+      "timestamp_ns": 1000028721,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1001349,
+      "qty": 1
+    },
+    {
+      "tick_index": 1154,
+      "timestamp_ns": 1000029767,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1104685,
+      "qty": 1
+    },
+    {
+      "tick_index": 1161,
+      "timestamp_ns": 1000029911,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1051697,
+      "qty": 1
+    },
+    {
+      "tick_index": 1270,
+      "timestamp_ns": 1000032792,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1106206,
+      "qty": 1
+    },
+    {
+      "tick_index": 1370,
+      "timestamp_ns": 1000035440,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1105793,
+      "qty": 1
+    },
+    {
+      "tick_index": 1392,
+      "timestamp_ns": 1000036065,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1002510,
+      "qty": 1
+    },
+    {
+      "tick_index": 1483,
+      "timestamp_ns": 1000038305,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1140949,
+      "qty": 1
+    },
+    {
+      "tick_index": 1494,
+      "timestamp_ns": 1000038595,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1105221,
+      "qty": 1
+    },
+    {
+      "tick_index": 1496,
+      "timestamp_ns": 1000038652,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1002645,
+      "qty": 1
+    },
+    {
+      "tick_index": 1509,
+      "timestamp_ns": 1000039008,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1054551,
+      "qty": 1
+    },
+    {
+      "tick_index": 1559,
+      "timestamp_ns": 1000040164,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1141986,
+      "qty": 1
+    },
+    {
+      "tick_index": 1572,
+      "timestamp_ns": 1000040437,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1000673,
+      "qty": 1
+    },
+    {
+      "tick_index": 1582,
+      "timestamp_ns": 1000040699,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1105791,
+      "qty": 1
+    },
+    {
+      "tick_index": 1617,
+      "timestamp_ns": 1000041544,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1053512,
+      "qty": 1
+    },
+    {
+      "tick_index": 1637,
+      "timestamp_ns": 1000042081,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1054133,
+      "qty": 1
+    },
+    {
+      "tick_index": 1670,
+      "timestamp_ns": 1000042999,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1106372,
+      "qty": 1
+    },
+    {
+      "tick_index": 1672,
+      "timestamp_ns": 1000043055,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1000941,
+      "qty": 1
+    },
+    {
+      "tick_index": 1685,
+      "timestamp_ns": 1000043337,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1053120,
+      "qty": 1
+    },
+    {
+      "tick_index": 1714,
+      "timestamp_ns": 1000044173,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1105725,
+      "qty": 1
+    },
+    {
+      "tick_index": 1735,
+      "timestamp_ns": 1000044776,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1142311,
+      "qty": 1
+    },
+    {
+      "tick_index": 1745,
+      "timestamp_ns": 1000045001,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1053528,
+      "qty": 1
+    },
+    {
+      "tick_index": 1747,
+      "timestamp_ns": 1000045075,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1143056,
+      "qty": 1
+    },
+    {
+      "tick_index": 1767,
+      "timestamp_ns": 1000045639,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1142289,
+      "qty": 1
+    },
+    {
+      "tick_index": 1774,
+      "timestamp_ns": 1000045813,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1104393,
+      "qty": 1
+    },
+    {
+      "tick_index": 1788,
+      "timestamp_ns": 1000046216,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1003057,
+      "qty": 1
+    },
+    {
+      "tick_index": 1807,
+      "timestamp_ns": 1000046598,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1143247,
+      "qty": 1
+    },
+    {
+      "tick_index": 1812,
+      "timestamp_ns": 1000046755,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1001804,
+      "qty": 1
+    },
+    {
+      "tick_index": 1847,
+      "timestamp_ns": 1000047699,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1142659,
+      "qty": 1
+    },
+    {
+      "tick_index": 1871,
+      "timestamp_ns": 1000048442,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1143655,
+      "qty": 1
+    },
+    {
+      "tick_index": 1895,
+      "timestamp_ns": 1000049148,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1143007,
+      "qty": 1
+    },
+    {
+      "tick_index": 1977,
+      "timestamp_ns": 1000051226,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1054764,
+      "qty": 1
+    },
+    {
+      "tick_index": 1982,
+      "timestamp_ns": 1000051329,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1102870,
+      "qty": 1
+    },
+    {
+      "tick_index": 1983,
+      "timestamp_ns": 1000051357,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1142187,
+      "qty": 1
+    },
+    {
+      "tick_index": 2003,
+      "timestamp_ns": 1000051903,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1143040,
+      "qty": 1
+    },
+    {
+      "tick_index": 2016,
+      "timestamp_ns": 1000052200,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1003606,
+      "qty": 1
+    },
+    {
+      "tick_index": 2041,
+      "timestamp_ns": 1000052777,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1054725,
+      "qty": 1
+    },
+    {
+      "tick_index": 2050,
+      "timestamp_ns": 1000052977,
+      "symbol": "SYM2",
+      "side": 1,
+      "price_fp": 1104103,
+      "qty": 1
+    },
+    {
+      "tick_index": 2095,
+      "timestamp_ns": 1000054033,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1143890,
+      "qty": 1
+    },
+    {
+      "tick_index": 2108,
+      "timestamp_ns": 1000054364,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1003837,
+      "qty": 1
+    },
+    {
+      "tick_index": 2135,
+      "timestamp_ns": 1000055061,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1143213,
+      "qty": 1
+    },
+    {
+      "tick_index": 2137,
+      "timestamp_ns": 1000055135,
+      "symbol": "SYM1",
+      "side": 1,
+      "price_fp": 1056407,
+      "qty": 1
+    },
+    {
+      "tick_index": 2247,
+      "timestamp_ns": 1000058015,
+      "symbol": "SYM3",
+      "side": 1,
+      "price_fp": 1144146,
+      "qty": 1
+    },
+    {
+      "tick_index": 2253,
+      "timestamp_ns": 1000058167,
+      "symbol": "SYM1",
+      "side": 0,
+      "price_fp": 1056197,
+      "qty": 1
+    },
+    {
+      "tick_index": 2260,
+      "timestamp_ns": 1000058388,
+      "symbol": "SYM0",
+      "side": 0,
+      "price_fp": 1002981,
+      "qty": 1
+    },
+    {
+      "tick_index": 2266,
+      "timestamp_ns": 1000058531,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1107022,
+      "qty": 1
+    },
+    {
+      "tick_index": 2303,
+      "timestamp_ns": 1000059327,
+      "symbol": "SYM3",
+      "side": 0,
+      "price_fp": 1143865,
+      "qty": 1
+    },
+    {
+      "tick_index": 2392,
+      "timestamp_ns": 1000061485,
+      "symbol": "SYM0",
+      "side": 1,
+      "price_fp": 1002652,
+      "qty": 1
+    },
+    {
+      "tick_index": 2394,
+      "timestamp_ns": 1000061546,
+      "symbol": "SYM2",
+      "side": 0,
+      "price_fp": 1106194,
+      "qty": 1
+    }
+  ]
+}
